@@ -1,0 +1,54 @@
+{
+  "name": "@whitespace/storybook-addon-code",
+  "version": "1.0.0",
+  "description": "A Storybook addon that extracts and displays syntax-highlighted source code",
+  "keywords": [
+    "addon",
+    "storybook",
+    "code",
+    "source"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitespace-se/storybook-addon-code.git"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "npm run clean & babel -d ./dist ./src",
+    "build:watch": "babel --watch -d ./dist ./src",
+    "clean": "rm -rf ./dist",
+    "prepare": "npm run build",
+    "prettier": "prettier --write '**/*.{js,json,md}'"
+  },
+  "author": "Whitespace",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.4",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.19.1",
+    "raw-loader": "^0.5.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "style-loader": "^0.23.1"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.7.2",
+    "@babel/parser": "^7.7.3",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/source-loader": "^5.2.6",
+    "estraverse": "^4.3.0",
+    "prismjs": "^1.15.0",
+    "react-syntax-highlighter": "^11.0.2"
+  }
+}
