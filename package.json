@@ -50,5 +50,8 @@
     "estraverse": "^4.3.0",
     "prismjs": "^1.15.0",
     "react-syntax-highlighter": "^11.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
