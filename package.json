@@ -17,7 +17,7 @@
     "build:watch": "babel --watch -d ./dist ./src",
     "clean": "rm -rf ./dist",
     "prepare": "npm run build",
-    "prettier": "prettier --write '**/*.{js,json,md}'"
+    "prettier": "prettier --write '**/*.{js,json,md,yml}'"
   },
   "author": "Whitespace",
   "license": "MIT",
