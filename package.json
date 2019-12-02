@@ -13,8 +13,6 @@
     "url": "https://github.com/whitespace-se/storybook-addon-code.git"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "build": "npm run clean & babel -d ./dist ./src",
     "build:watch": "babel --watch -d ./dist ./src",
     "clean": "rm -rf ./dist",
