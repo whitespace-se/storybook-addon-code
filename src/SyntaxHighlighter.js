@@ -22,18 +22,33 @@ const Wrapper = styled.div(
 );
 
 const Pre = styled.pre(({ theme, padded }) => ({
-  display: 'flex',
+  display: 'flex !important',
   justifyContent: 'flex-start',
   margin: 0,
   padding: padded ? `${theme.layoutMargin}px !important` : 0,
   tabSize: '2',
 }));
 
-const Code = styled.code({
-  flex: 1,
-  paddingRight: 0,
-  opacity: 1,
-});
+const Code = styled.code`
+  flex: 1;
+  padding-right: 0;
+  opacity: 1;
+  counter-reset: line;
+
+  .code-line {
+    counter-increment: line;
+    position: relative;
+    display: block;
+    margin-left: 1.5rem;
+  }
+
+  .code-line:before {
+    content: counter(line);
+    position: absolute;
+    margin-left: -1.5rem;
+    color: #000;
+  }
+`;
 
 export default class SyntaxHighlighter extends Component {
   static defaultProps = {
@@ -87,9 +102,9 @@ export default class SyntaxHighlighter extends Component {
           useInlineStyles={true}
           PreTag={Pre}
           CodeTag={Code}
-          lineNumberContainerStyle={{
-            paddingRight: '10px',
-          }}
+          showLineNumbers={false}
+          wrapLines={true}
+          lineProps={{ className: 'code-line' }}
           {...rest}
         >
           {children.trim()}
